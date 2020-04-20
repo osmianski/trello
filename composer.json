@@ -1,12 +1,15 @@
 {
-    "name": "osmianski/trello",
+    "name": "osmianski\/trello",
     "autoload": {
         "psr-4": {
-            "Osmianski\\Trello\\": "src/"
+            "Osmianski\\Trello\\": "src\/"
         }
     },
     "require": {
         "php": "^7.2",
-        "osmscripts/core": "^1.4"
-    }
+        "osmscripts\/core": "^1.4"
+    },
+    "bin": [
+        "trello"
+    ]
 }
