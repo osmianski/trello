@@ -1,0 +1,7 @@
+{
+    "trello": {
+        "commands": {
+            "assign:done_at": "Osmianski\\Trello\\Commands\\AssignDoneAt"
+        }
+    }
+}
