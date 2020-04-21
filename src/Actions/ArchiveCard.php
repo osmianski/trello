@@ -29,8 +29,8 @@ class ArchiveCard extends Object_
     #region Properties
     public function default($property) {
         switch ($property) {
-            case 'source_list': return $this->command->source_list;
-            case 'target_board': return $this->command->target_board;
+            case 'source_list': return $this->command->done_list;
+            case 'target_board': return $this->command->done_board;
             case 'move_action':
                 return $this->card->getLastMoveTo($this->source_list);
             case 'move_date': return date_parse($this->move_action->date);
