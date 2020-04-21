@@ -58,12 +58,12 @@ class Trello extends Object_
         return $result;
     }
 
-    public function put($route, $value) {
+    public function put($route, $values) {
         $context  = stream_context_create([
             'http' => [
                 'header'  => "Content-Type: application/json\r\n",
                 'method'  => 'PUT',
-                'content' => json_encode($value),
+                'content' => json_encode($values),
             ]
         ]);
 
@@ -71,6 +71,23 @@ class Trello extends Object_
             false, $context)) === false)
         {
             throw new \Exception("'PUT '{$route}' failed");
+        }
+
+        return $result;
+    }
+
+    public function post($route) {
+        $context  = stream_context_create([
+            'http' => [
+                'header'  => "Content-Type: application/json\r\n",
+                'method'  => 'POST',
+            ]
+        ]);
+
+        if (($result = file_get_contents($this->url($route),
+            false, $context)) === false)
+        {
+            throw new \Exception("'POST '{$route}' failed");
         }
 
         return $result;

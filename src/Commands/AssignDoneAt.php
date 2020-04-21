@@ -38,13 +38,10 @@ class AssignDoneAt extends Command
         global $script;
 
         switch ($property) {
-            case 'trello':
-                return $script->singleton(Trello::class);
+            case 'trello': return $script->singleton(Trello::class);
 
-            case 'board_url':
-                return 'https://trello.com/b/tnFgSJtY';
-            case 'list_name':
-                return 'Done';
+            case 'board_url': return 'https://trello.com/b/tnFgSJtY';
+            case 'list_name': return 'Done';
 
             case 'board':
                 return $this->trello->getBoard($this->board_url);
@@ -70,8 +67,7 @@ class AssignDoneAt extends Command
             }
 
             $action = $this->getMoveAction($card);
-            $card->updateField($this->done_at_field,
-                (object)['date' => $action->date]);
+            $card->updateField($this->done_at_field, ['date' => $action->date]);
         }
 
     }

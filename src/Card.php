@@ -26,9 +26,29 @@ class Card extends TrelloObject
             'idCustomField', $fieldDefinition->id);
     }
 
+    public function getLastMoveTo(List_ $list) {
+        foreach (array_reverse($this->actions) as $action) {
+            if (($action->raw->data->listAfter->id ?? null) !== $list->id) {
+                continue;
+            }
+
+            if (($action->raw->data->listBefore->id ?? null) === $list->id) {
+                continue;
+            }
+
+            return $action;
+        }
+
+        return null;
+    }
+
     public function updateField(FieldDefinition $fieldDefinition, $value) {
         $this->trello->put("/cards/{$this->id}/" .
             "customField/{$fieldDefinition->id}/item",
-            (object)['value' => $value]);
+            (object)['value' => (object)$value]);
+    }
+
+    public function update($values) {
+        $this->trello->put("/cards/{$this->id}", (object)$values);
     }
 }

@@ -1,7 +1,8 @@
 {
     "trello": {
         "commands": {
-            "assign:done_at": "Osmianski\\Trello\\Commands\\AssignDoneAt"
+            "assign:done_at": "Osmianski\\Trello\\Commands\\AssignDoneAt",
+            "archive": "Osmianski\\Trello\\Commands\\Archive"
         }
     }
 }

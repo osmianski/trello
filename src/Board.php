@@ -30,4 +30,13 @@ class Board extends TrelloObject
         return $this->trello->whereRawValueEquals($this->lists,
             'name', $name);
     }
+
+    public function createList($name, string $pos = 'bottom') {
+        $this->trello->post("/lists?name=" . urlencode($name) .
+            "&idBoard={$this->id}&pos={$pos}");
+
+        unset($this->lists);
+
+        return $this->getList($name);
+    }
 }
