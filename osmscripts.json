@@ -3,6 +3,11 @@
         "commands": {
             "assign:done_at": "Osmianski\\Trello\\Commands\\AssignDoneAt",
             "archive": "Osmianski\\Trello\\Commands\\Archive"
+        },
+        "variables": {
+            "key": "Trello API Developer Key. Copy from: https://trello.com/app-key",
+            "token": "Trello API user authenticating token. Click \"manually generate a token\" link on https://trello.com/app-key page",
+            "done_board": "Done board URL. Copy from board's \"Menu -> More -> Link to this board\"."
         }
     }
 }
