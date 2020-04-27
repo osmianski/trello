@@ -8,12 +8,12 @@ Created using [OsmScripts](https://github.com/osmscripts/osmscripts).
 
 1. Install this package:
 
-        composer global config repositories.osmianski_trello vcs https://github.com/osmianski/trello.git
-        composer global require osmianski/trello:dev-master@dev
+        composer global require osmianski/trello
 
-    **Note**. For development, use pushable URL instead:
-    
+    **Note**. For development, use these commands instead:
+
         composer global config repositories.osmianski_trello vcs git@github.com:osmianski/trello.git
+        composer global require osmianski/trello:dev-master@dev
 
 2. `cd` to config directory. You can keep configuration settings in any directory, I recommend Composer's global installation directory:
 
@@ -42,8 +42,6 @@ Run `trello archive` script daily. It moves all cards from "Done" list on the Ta
     Take board URL from board `Menu -> More -> Link to this board`.        
  
 2. Add a cron job using `crontab -e` (if not on Linux, use your OS job scheduler):
-
-0   22 * * * (date && cd ~/.config/composer && ~/.config/composer/vendor/bin/trello archive https://trello.com/b/tnFgSJtY) >> ~/trello-archive.log
 
         0   22 * * * (date && cd ~/.config/composer && ~/.config/composer/vendor/bin/trello archive {task_board_url}) >> ~/trello-archive.log
 
