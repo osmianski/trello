@@ -13,7 +13,7 @@ Created using [OsmScripts](https://github.com/osmscripts/osmscripts).
     **Note**. For development, use these commands instead:
 
         composer global config repositories.osmianski_trello vcs git@github.com:osmianski/trello.git
-        composer global require osmianski/trello:dev-master@dev
+        composer global require osmianski/trello:v1.x-dev
 
 2. `cd` to config directory. You can keep configuration settings in any directory, I recommend Composer's global installation directory:
 
