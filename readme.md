@@ -10,9 +10,8 @@ Created using [OsmScripts](https://github.com/osmscripts/osmscripts).
 
         composer global require osmianski/trello
 
-    **Note**. For development, use these commands instead:
+    **Note**. For development, require a `master` branch instead:
 
-        composer global config repositories.osmianski_trello vcs git@github.com:osmianski/trello.git
         composer global require osmianski/trello:dev-master@dev
 
 2. `cd` to config directory. You can keep configuration settings in any directory, I recommend Composer's global installation directory:
